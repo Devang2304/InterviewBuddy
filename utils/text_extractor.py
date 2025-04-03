@@ -13,9 +13,9 @@ class text_extractor:
         out.close()
         
 
-if __name__ == "__main__":
-    file_path = "../../../MY RESUME_DEVANG/barclays resume/Devang_Vartak_Resume.pdf"
-    obj = text_extractor()
-    obj.extract_text(file_path)
+# if __name__ == "__main__":
+#     file_path = "../../../MY RESUME_DEVANG/barclays resume/Devang_Vartak_Resume.pdf"
+#     obj = text_extractor()
+#     obj.extract_text(file_path)
         
     
