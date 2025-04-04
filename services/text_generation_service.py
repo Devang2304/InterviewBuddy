@@ -1,5 +1,5 @@
 from openai import OpenAI
-from ..config.llm_config import LLM_CONFIG
+from config.llm_config import LLM_CONFIG
 
 class text_generation_service:
     def __init__(self):

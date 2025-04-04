@@ -1,6 +1,6 @@
 from openai import OpenAI
 import asyncio
-from ..config.llm_config import LLM_CONFIG
+from config.llm_config import LLM_CONFIG
 
 #  USE THIS LINE FOR RUNNING LOCALLY INDIVIDUAL FILES
 # import sys

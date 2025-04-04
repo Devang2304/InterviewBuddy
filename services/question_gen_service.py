@@ -1,5 +1,5 @@
-from .text_generation_service import text_generation_service
-from .resume_analyser import ResumeAnalyser
+from services.text_generation_service import text_generation_service
+from services.resume_analyser import ResumeAnalyser
 from typing import Dict,Any
 
 class QuestionGenerationService:
@@ -11,6 +11,7 @@ class QuestionGenerationService:
         self.text_generation_service = text_generation_service()
     
     async def generate_questions(self, category: str) -> Dict[str, Any]:
+        await self.resume_analyser.analyse_resume("C:/Users/devan/Coding_Projects/AI_powered_interviewer/Devang_Vartak_resume.pdf")
         
         if category not in self.VALID_CATEGORIES:
             raise ValueError(f"Invalid category: {category}. Valid categories are: {', '.join(self.VALID_CATEGORIES)}")

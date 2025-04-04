@@ -1,5 +1,6 @@
-from ..utils.text_extractor import text_extractor
-from .Resume_extractor_LLM import LLM
+from utils.text_extractor import text_extractor
+from services.Resume_extractor_LLM import LLM
+import json
 
 
 class ResumeAnalyser:
@@ -14,7 +15,7 @@ class ResumeAnalyser:
         self.education = content
         
     def set_experience(self, content):
-        self.education = content
+        self.experience = content
     
     def set_skills(self, content):
         self.skills = content
@@ -50,15 +51,28 @@ class ResumeAnalyser:
         data = self.get_resumeData(pdf)
         llm =LLM()
         response = await llm.get_response(data)
-        if(response["education"]):
-            self.set_education(response["education"])
-        if(response["experience"]):
-            self.set_experience(response["experience"])
-        if(response["skills"]):
-            self.set_skills(response["skills"])
-        if(response["projects"]):
-            self.set_projects(response["projects"])
-        if(response["achievements"]):
-            self.set_achievements(response["achievements"])
+        
+        try:
+            response_dict = json.loads(response) if isinstance(response, str) else response
+            print("LLM Response:", response_dict)
+            if all(value is None for value in response_dict.values()):
+                print("Warning: All response values are None")
+        
+            for key in ['education', 'experience', 'skills', 'projects', 'achievements']:
+                value = response_dict.get(key)
+                print(f"Processing {key}: {value}")
+                if value is not None:
+                    setter = getattr(self, f'set_{key}')
+                    setter(value)
+                else:
+                    print(f"Warning: {key} is None in the response")
+        except json.JSONDecodeError:
+            print("Error: Invalid JSON response")
+        except Exception as e:
+            print(f"Error processing response: {str(e)}")
+        
+        
+        
+             
         
         
