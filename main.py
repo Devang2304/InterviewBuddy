@@ -12,22 +12,12 @@ async def runIt():
     
     question_gen_service = QuestionGenerationService()
     
-    questions = await question_gen_service.generate_questions("education")
-    print(questions,end="\n")
-    questions = await question_gen_service.generate_questions("experience")
-    print(questions,end="\n")
-    questions = await question_gen_service.generate_questions("skills")
-    print(questions,end="\n")
-    questions = await question_gen_service.generate_questions("projects")
-    print(questions,end="\n")
-    questions = await question_gen_service.generate_questions("achievements")
-    print(questions,end="\n")
-    
+    questions = await question_gen_service.generate_questions()
 
 if __name__ == "__main__":
     async def main():
         response = await runIt()
-        print("Response:", response)
+        # print("Response:", response)
         
     asyncio.run(main())
        

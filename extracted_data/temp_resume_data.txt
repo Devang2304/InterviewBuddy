@@ -1,0 +1,58 @@
+DEVANG VARTAK
+9172266748 | devangvartak2304@gmail.com | Linkedin | Github | Leetcode
+Education
+Sardar Patel Institute of Technology
+Andheri, India
+Bachelor of Technology – Electronics and Telecommunication
+Dec 2021 – Jun 2025
+Experience
+Avinyaz, USA | ExpressJS, NodeJS, ReactJS, DynamoDB, AWS, Docker
+Remote
+Backend Intern
+Aug 2023 – Oct 2023
+• Designed a entire microservice, including API and database design, and improved existing microservices.
+• Built 3 key modules like audio generation, LangChain integration for OpenAI models, & image generation
+• Independently analyzed schema requirements and designed 3 efficient DynamoDB tables
+• Created a API & token usage monitoring system, achieved 30% cost reduction by data analysis & optimization
+• Restructured DynamoDB tables, implemented audit logging, and made universal template for microservice
+Oculus S.P.I.T. | ExpressJS, NodeJS, ReactJS, MongoDB
+Andheri, India
+Technical Head
+Nov 2022 – Mar 2023
+• Crafted a real-time IPL auction app for a college event with over 20 live auctions & 252 participating players
+• Managed databases comprising 4 interconnected schemas, ensuring data integrity and scalability
+• Developed admin panel for real-time auction updates,reducing time by eliminating direct database access
+• Created 10 efficient API endpoints to handle player information, leaderboard updates, and other team data
+Projects
+CodeQuest | React, Node, Express, MongoDB, Docker, Redis
+Demo | Github
+• Engineered a scalable online judge platform with Docker containers for secure execution and Redis for queue based
+request handling. Platform features code compilation, multi-language support, submission history, tag-based
+filtering for questions, and private/public code notes.
+Brainstorm | React, Redux, Canvas
+Demo | Github
+• Designed an intuitive online whiteboard for drawing and brainstorming ideas, integrated features like download
+functionality, undo/redo options, and toolbox for brush and color selection.
+CloudLaunch | AWS, Docker, Redis, S3
+Demo | Github
+• Architected CloudLaunch incorporating AWS, Docker, Redis, and S3 for webapp hosting. Engineered custom
+solutions for reverse proxy, parallel builds, and automation API. Built robust log collection and real-time
+monitoring for efficient system management.
+Technical Skills
+Languages: C++, Java, Javascript, SQL
+Frameworks: React, Node.js, Express.js
+Databases: MongoDB, DynamoDB, MySQL
+Tools: Docker, Postman, Git, Github, WSL
+Platforms: Amazon Web Services, Render, Vercel, Netlify
+Achievements
+• Leetcode (Peak Rating 1714) and Codeforces (Peak Rating 1105)
+• Placed top 15 in Barclays Hack-o-Hire Hackathon, selected from over 4,000 teams across India
+• Finished top 10 in Unscript Rookies Hackathon (State Level)
+• Secured 3140th globally out of 19630 in leetcode Biweekly contest 130
+• Achieved 3530th rank globally out of 21000 in leetcode weekly contest 374
+• Ranked 2852nd globally out of 19304 in Codeforces 937(Div. 4)
+• Solved more than 1000 problems across various platforms such as leetcode, codeforces & GFG
+Volunteer Experience
+Creatives at VSM SPIT
+Dec 2022 – Mar 2023
+• Responsible for creating 20+ graphic content for a stock market simulator event.

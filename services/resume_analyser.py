@@ -1,6 +1,7 @@
 from utils.text_extractor import text_extractor
 from services.Resume_extractor_LLM import LLM
 import json
+import os
 
 
 class ResumeAnalyser:
@@ -60,7 +61,13 @@ class ResumeAnalyser:
         
             for key in ['education', 'experience', 'skills', 'projects', 'achievements']:
                 value = response_dict.get(key)
-                print(f"Processing {key}: {value}")
+                # print(f"Processing {key}: {value}")
+                path = "extracted_session_json"
+                if not os.path.exists(path):
+                    os.makedirs(path)
+                json_file_path = os.path.join(path, f"{key}SessionData.json")
+                with open(json_file_path, 'w') as f:
+                    json.dump({key: value}, f, indent=4)
                 if value is not None:
                     setter = getattr(self, f'set_{key}')
                     setter(value)
