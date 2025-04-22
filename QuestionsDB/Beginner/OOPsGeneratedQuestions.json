@@ -1,0 +1,154 @@
+{
+  "topics": [
+    {
+      "name": "Class and Object",
+      "questions": [
+        "What is the difference between a class and an object in Java?",
+        "Can you create an object without defining a class? Justify your answer.",
+        "Write a simple Java class with at least two member variables and one method, then instantiate it.",
+        "How does Java handle memory allocation for objects?",
+        "Explain how constructors are used in object creation."
+      ]
+    },
+    {
+      "name": "Inheritance",
+      "questions": [
+        "What is inheritance and how is it implemented in Java?",
+        "Can a class inherit from multiple classes in Java? Explain with reasons.",
+        "Demonstrate multilevel inheritance with a code example.",
+        "What is the role of the 'super' keyword in inheritance?",
+        "In what scenarios would you use inheritance in a project?"
+      ]
+    },
+    {
+      "name": "Polymorphism",
+      "questions": [
+        "Define polymorphism and describe its types in Java.",
+        "What is the difference between compile-time and run-time polymorphism?",
+        "Provide an example where method overloading is useful.",
+        "How is method overriding handled in Java? What are its rules?",
+        "What happens if a subclass defines a method with the same name but different return type?"
+      ]
+    },
+    {
+      "name": "Encapsulation",
+      "questions": [
+        "What is encapsulation in Java?",
+        "How do you achieve encapsulation in Java code?",
+        "Why is encapsulation considered a good programming practice?",
+        "What would be the consequence of not using encapsulation?",
+        "Give an example of a class that demonstrates encapsulation."
+      ]
+    },
+    {
+      "name": "Abstraction",
+      "questions": [
+        "Differentiate between abstraction and encapsulation.",
+        "How does Java achieve abstraction?",
+        "What is the difference between abstract classes and interfaces?",
+        "Give an example use-case where abstraction would be critical.",
+        "Can we instantiate an abstract class? Explain."
+      ]
+    },
+    {
+      "name": "Constructor",
+      "questions": [
+        "What are constructors in Java and why are they used?",
+        "Explain constructor overloading with a code example.",
+        "Can a constructor be private? What is the use case?",
+        "What is the difference between a constructor and a method?",
+        "What happens if no constructor is defined in a class?"
+      ]
+    },
+    {
+      "name": "Method Overloading and Overriding",
+      "questions": [
+        "What is method overloading? Provide a simple example.",
+        "How does method overriding differ from overloading?",
+        "What are the rules for method overriding in Java?",
+        "Can you override a static method? Why or why not?",
+        "Describe how polymorphism relates to method overriding."
+      ]
+    },
+    {
+      "name": "Access Modifiers",
+      "questions": [
+        "What are the different access modifiers in Java?",
+        "What is the default access modifier and where is it applicable?",
+        "Explain the difference between protected and private.",
+        "In which scenarios would you use public, private, protected access?",
+        "Can access modifiers be applied to classes? Explain."
+      ]
+    },
+    {
+      "name": "Static Keyword",
+      "questions": [
+        "What is the significance of the 'static' keyword in Java?",
+        "How is a static method different from an instance method?",
+        "Can you override a static method in Java?",
+        "Explain static blocks with an example.",
+        "What are the limitations of static methods?"
+      ]
+    },
+    {
+      "name": "Final Keyword",
+      "questions": [
+        "What does the 'final' keyword mean when applied to variables, methods, and classes?",
+        "Can a final method be overridden? Why or why not?",
+        "What is the difference between finally and final?",
+        "Is it possible to change the value of a final reference variable?",
+        "Why would you make a class final?"
+      ]
+    },
+    {
+      "name": "This Keyword",
+      "questions": [
+        "What is the purpose of the 'this' keyword in Java?",
+        "How is 'this' used to refer to current class members?",
+        "Explain how 'this()' can be used to call another constructor.",
+        "Can 'this' be used in static methods? Why or why not?",
+        "Give an example of when using 'this' is necessary."
+      ]
+    },
+    {
+      "name": "Super Keyword",
+      "questions": [
+        "What is the function of the 'super' keyword in Java?",
+        "How is 'super' different from 'this'?",
+        "Can you use 'super' to call a parent class constructor?",
+        "What are some use cases where 'super' must be used?",
+        "Explain with an example how method overriding interacts with 'super'."
+      ]
+    },
+    {
+      "name": "Wrapper Classes",
+      "questions": [
+        "What are wrapper classes in Java?",
+        "Why are wrapper classes needed if we have primitive types?",
+        "Explain autoboxing and unboxing with examples.",
+        "What is the difference between Integer and int?",
+        "When would using a wrapper class be preferable to a primitive?"
+      ]
+    },
+    {
+      "name": "Garbage Collection",
+      "questions": [
+        "What is garbage collection in Java?",
+        "How does the Java garbage collector identify unused objects?",
+        "What are the different types of references in Java (strong, weak, etc.)?",
+        "Can you force garbage collection manually?",
+        "What is the finalize() method and is it still recommended?"
+      ]
+    },
+    {
+      "name": "Type Casting",
+      "questions": [
+        "What is the difference between implicit and explicit type casting?",
+        "Can you cast an object from one class to another?",
+        "What is ClassCastException and how can it be avoided?",
+        "Provide a code example of upcasting and downcasting.",
+        "When should you avoid type casting in Java?"
+      ]
+    }
+  ]
+}

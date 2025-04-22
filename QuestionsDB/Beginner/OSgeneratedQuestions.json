@@ -1,0 +1,245 @@
+
+{
+  "topics": [
+    {
+      "topic": "Operating System Fundamentals",
+      "questions": [
+        "What is the primary function of an operating system?",
+        "Explain the difference between system software and application software. Give examples of each.",
+        "Describe the role of an OS as a resource manager. What resources does it manage?",
+        "Why is an OS necessary? What are the consequences of not having one?",
+        "Outline the key goals of an OS. How do these goals sometimes conflict with each other?"
+      ]
+    },
+    {
+      "topic": "Types of Operating Systems",
+      "questions": [
+        "Differentiate between batch-processing, multiprogramming, multitasking, and multiprocessing operating systems.",
+        "Explain the concept of a distributed operating system.",
+        "What are the key characteristics of a real-time operating system (RTOS)? Provide examples of where RTOS are used.",
+        "Compare and contrast single-process and multi-process operating systems.",
+        "How does time-sharing contribute to the functionality of a multitasking OS?"
+      ]
+    },
+    {
+      "topic": "Multitasking vs. Multithreading",
+      "questions": [
+        "Explain the difference between multitasking and multithreading.",
+        "What is a process? What is a thread? How are they related?",
+        "Describe the concept of context switching in both multitasking and multithreading.",
+        "What are the advantages of multithreading over multitasking?",
+        "Discuss the resource sharing characteristics of threads within a process. What are the implications of this sharing?"
+      ]
+    },
+    {
+      "topic": "Operating System Components (Kernel and User Space)",
+      "questions": [
+        "Describe the role and responsibilities of the kernel in an operating system.",
+        "What is user space? How does it differ from kernel space?",
+        "Explain the purpose of a shell or command interpreter.",
+        "What are the different types of kernels (monolithic, micro, hybrid)? Compare and contrast their architectures and trade-offs.",
+        "Explain inter-process communication (IPC). Why is it important?"
+      ]
+    },
+    {
+      "topic": "System Calls",
+      "questions": [
+        "What is a system call? Why are they necessary?",
+        "Explain the transition between user mode and kernel mode.",
+        "Describe the different categories of system calls (process control, file management, etc.).",
+        "Give examples of specific system calls in Windows and Unix-like operating systems.",
+        "How are system calls implemented? What programming language is commonly used?"
+      ]
+    },
+    {
+      "topic": "Boot Process",
+      "questions": [
+        "Describe the steps involved in the boot process of a computer.",
+        "What is BIOS/UEFI? What is its role in the boot process?",
+        "Explain the purpose of the Master Boot Record (MBR).",
+        "What is a bootloader? Give examples of common bootloaders.",
+        "What is the Power-On Self-Test (POST)?"
+      ]
+    },
+    {
+      "topic": "32-bit vs. 64-bit Operating Systems",
+      "questions": [
+        "What is the fundamental difference between a 32-bit and a 64-bit operating system?",
+        "Explain the addressable memory limitations of 32-bit and 64-bit OS.",
+        "What are the advantages of using a 64-bit OS over a 32-bit OS?",
+        "Can a 32-bit CPU run a 64-bit OS? Can a 64-bit CPU run a 32-bit OS?",
+        "How does a 64-bit architecture impact graphics performance?"
+      ]
+    },
+    {
+      "topic": "Memory Hierarchy",
+      "questions": [
+        "Describe the different levels of memory in a computer system (registers, cache, main memory, secondary memory).",
+        "Compare the characteristics of each level of memory (cost, access speed, storage size, volatility).",
+        "Explain the purpose of cache memory.",
+        "What is the relationship between primary and secondary storage?",
+        "Why is a memory hierarchy important for system performance?"
+      ]
+    },
+    {
+      "topic": "Process Management",
+      "questions": [
+        "What is the difference between a program and a process?",
+        "Describe the steps involved in creating a process.",
+        "What is a Process Control Block (PCB)? What information does it store?",
+        "Explain the different process states (new, running, waiting, ready, terminated).",
+        "What is a process table and what is its purpose?"
+      ]
+    },
+    {
+      "topic": "Process Scheduling",
+      "questions": [
+        "Explain the concept of process scheduling and its importance in a multi-programming OS.",
+        "Differentiate between preemptive and non-preemptive scheduling.",
+        "What are the key goals of CPU scheduling?",
+        "Describe the following scheduling algorithms: FCFS, SJF (preemptive and non-preemptive), Priority (preemptive and non-preemptive), Round Robin.",
+        "What is the Convoy Effect and which scheduling algorithms are susceptible to it?"
+      ]
+    },
+    {
+      "topic": "Process Queues and Schedulers",
+      "questions": [
+        "Describe the different process queues (job queue, ready queue, waiting queue).",
+        "What is the role of the Long-Term Scheduler (LTS), Short-Term Scheduler (STS), and Medium-Term Scheduler (MTS)?",
+        "Explain the concepts of swapping and context switching. How are they related?",
+        "What is an orphan process? What happens to them?",
+        "What is a zombie process? Why do they occur?"
+      ]
+    },
+    {
+      "topic": "Multi-Level Queue Scheduling (MLQ) and Multi-Level Feedback Queue Scheduling (MLFQ)",
+      "questions": [
+        "Describe the multi-level queue scheduling (MLQ) algorithm.",
+        "What are the different types of processes used by the MLQ algorithm?",
+        "Explain the multi-level feedback queue scheduling (MLFQ) algorithm.",
+        "How does MLFQ differ from MLQ? What advantages does it offer?",
+        "How does MLFQ prevent starvation?"
+      ]
+    },
+    {
+      "topic": "Concurrency and Thread Synchronization",
+      "questions": [
+        "What is concurrency? How does it relate to parallelism?",
+        "Explain the benefits of multithreading.",
+        "How does thread context switching differ from process context switching?",
+        "What are some techniques for thread synchronization?",
+        "Explain the role of thread control block (TCB)."
+      ]
+    },
+    {
+      "topic": "Critical Section Problem and Solutions",
+      "questions": [
+        "What is a critical section? Why is it a problem in concurrent programming?",
+        "What is a race condition? How can it occur?",
+        "Explain the concepts of atomic operations, mutual exclusion, locks, and semaphores.",
+        "What are the disadvantages of using locks?",
+        "Why simple flag variable is not enough to avoid race condition?"
+      ]
+    },
+    {
+      "topic": "Conditional Variables and Semaphores",
+      "questions": [
+        "What is a conditional variable? How does it work with locks?",
+        "Why use conditional variables over busy waiting?",
+        "What is a semaphore? What is the difference between binary and counting semaphores?",
+        "How can semaphores be used to control access to resources?",
+        "How to modify wait() and signal() semaphore operations to overcome the need for busy waiting?"
+      ]
+    },
+    {
+      "topic": "The Dining Philosophers Problem",
+      "questions": [
+        "Describe the Dining Philosophers problem.",
+        "How can semaphores be used to model the Dining Philosophers problem?",
+        "Why is the semaphore-based solution prone to deadlock?",
+        "What are some methods to avoid deadlock in the Dining Philosophers problem?",
+        "Why are just semaphores not enough to solve this problem?"
+      ]
+    },
+    {
+      "topic": "Deadlock",
+      "questions": [
+        "What is a deadlock? How does it occur?",
+        "What are the four necessary conditions for deadlock to occur?",
+        "Describe the different methods for handling deadlocks: prevention, avoidance, detection, and ignorance.",
+        "Explain the banker's algorithm for deadlock avoidance.",
+        "How can a system recover from a deadlock?"
+      ]
+    },
+        {
+      "topic": "Memory Management Techniques",
+      "questions": [
+        "Explain the difference between logical and physical address spaces.",
+        "What is the role of the Memory Management Unit (MMU)?",
+        "Describe contiguous and non-contiguous memory allocation techniques.",
+        "Compare and contrast fixed partitioning and dynamic partitioning.",
+        "What are relocation and limit registers and how are they used in memory protection?"
+      ]
+    },
+    {
+      "topic": "Free Space Management",
+      "questions": [
+        "What is external fragmentation? How does it arise?",
+        "What is compaction or defragmentation? What are its costs and benefits?",
+        "How is free space represented in an OS?",
+        "Describe the different algorithms for allocating free space (first fit, next fit, best fit, worst fit).",
+        "What are the trade-offs between these allocation algorithms?"
+      ]
+    },
+    {
+      "topic": "Paging",
+      "questions": [
+        "What is paging? How does it solve the problem of external fragmentation?",
+        "Explain the concepts of pages and frames.",
+        "What is a page table? What information does it store?",
+        "How does paging work to translate logical addresses to physical addresses?",
+        "What is a Translation Lookaside Buffer (TLB)? How does it improve paging performance?"
+      ]
+    },
+    {
+      "topic": "Segmentation",
+      "questions": [
+        "What is segmentation? How does it support the user view of memory?",
+        "Explain the concepts of segments, segment numbers, and offsets.",
+        "What are the advantages and disadvantages of segmentation?",
+        "How does segmentation differ from paging?",
+        "Why do modern systems often implement both segmentation and paging?"
+      ]
+    },
+    {
+      "topic": "Virtual Memory",
+      "questions": [
+        "What is virtual memory? How does it allow programs to be larger than physical memory?",
+        "Explain the concept of demand paging.",
+        "What is a page fault? How is it handled by the OS?",
+        "Explain the valid-invalid bit scheme in the page table.",
+        "What is pure demand paging?"
+      ]
+    },
+    {
+      "topic": "Page Replacement Algorithms",
+      "questions": [
+        "Why are page replacement algorithms necessary?",
+        "Describe the following page replacement algorithms: FIFO, Optimal, LRU, LFU, MFU.",
+        "What is Belady's anomaly? Which algorithm is susceptible to it?",
+        "How are LRU page replacement algorithms implemented?",
+        "What are the trade-offs between different page replacement algorithms?"
+      ]
+    },
+    {
+      "topic": "Thrashing",
+      "questions": [
+        "What is thrashing? What causes it?",
+        "How does thrashing affect system performance?",
+        "How can thrashing be detected?",
+        "Describe the working set model for handling thrashing.",
+        "Explain how page fault frequency can be used to control thrashing."
+      ]
+    }
+  ]
+}
