@@ -12,6 +12,19 @@ class QuestionGenerationService:
         self.resume_analyser = ResumeAnalyser()
         self.text_generation_service = text_generation_service()
     
+    async def get_question(self,category:str) -> Dict[str, Any]:
+        try:
+            if category not in self.VALID_CATEGORIES:
+                raise ValueError(f"Invalid category: {category}. Valid categories are: {', '.join(self.VALID_CATEGORIES)}")
+            path = os.path.join("resume_data_json",f"{category}SessionData.json")
+            with open(path, 'r') as file:
+                data = json.load(file)
+            questions = data[category]
+            return questions
+        except Exception as e:
+            return {"error": str(e)}
+            
+    
     async def generate_questions(self,pdf) -> None:
         await self.resume_analyser.analyse_resume(pdf)
         
@@ -21,16 +34,80 @@ class QuestionGenerationService:
         try:
             
             category_prompts = {
-                "education": "Generate 5 specific questions about the candidate's educational background, focusing on their degree, major, institution, and timeline. Verify key details from their education history.",
-                
-                "experience": "Generate 5 in-depth technical questions based on their work experience. Focus on specific projects, technologies used, and achievements. Include questions about architectural decisions, optimizations, and problem-solving approaches.",
-                
-                "skills": "Generate 5 technical questions to assess proficiency in their listed skills. Include scenario-based questions that test practical application. Focus on both technical depth and breadth of their skillset.",
-                
-                "projects": "Generate 5 detailed questions about their projects. Focus on technical implementation, challenges faced, and solutions developed. Ask about specific technologies used and architectural decisions made.",
-                
-                "achievements": "Generate 5 questions about their achievements and impact. Focus on quantifiable results, methodologies used, challenges overcome, and lessons learned."
-            }
+                        "education": """
+                        You are a recruiter-bot. For the “education” category, generate exactly 5 concise, standalone questions (no sub-questions or multi-part questions) about the candidate’s educational background (degree, major, institution, timeline). 
+
+                        Output **only** valid JSON in this exact format (no extra keys):
+
+                         [
+                            "Question 1?",
+                            "Question 2?",
+                            "Question 3?",
+                            "Question 4?",
+                            "Question 5?"
+                        ]
+                        
+                        """,
+
+                        "experience": """
+                        You are a recruiter-bot. For the “experience” category, generate exactly 5 concise, standalone technical questions based on the candidate’s work history—focus on one project or technology per question (architecture, optimizations, problem solving).
+
+                        Output **only** valid JSON in this exact format (no extra keys):
+
+                        [
+                            "Question 1?",
+                            "Question 2?",
+                            "Question 3?",
+                            "Question 4?",
+                            "Question 5?"
+                        ]
+                        
+                        """,
+
+                        "skills": """
+                        You are a recruiter-bot. For the “skills” category, generate exactly 5 concise, standalone scenario-based questions that assess practical proficiency in the candidate’s listed skills.
+
+                        Output **only** valid JSON in this exact format (no extra keys):
+
+                        [
+                            "Question 1?",
+                            "Question 2?",
+                            "Question 3?",
+                            "Question 4?",
+                            "Question 5?"
+                        ]
+                        
+                        """,
+
+                        "projects": """
+                        You are a recruiter-bot. For the “projects” category, generate exactly 5 concise, standalone questions about the candidate’s projects—focus on implementation details, challenges, and architecture (one topic per question).
+
+                        Output **only** valid JSON in this exact format (no extra keys):
+
+                        [
+                            "Question 1?",
+                            "Question 2?",
+                            "Question 3?",
+                            "Question 4?",
+                            "Question 5?"
+                        ]
+                        """,
+
+                        "achievements": """
+                        You are a recruiter-bot. For the “achievements” category, generate exactly 5 concise, standalone questions about the candidate’s achievements—focus on quantifiable impact, methodologies, and lessons learned (one achievement per question).
+
+                        Output **only** valid JSON in this exact format (no extra keys):
+
+                        [
+                            "Question 1?",
+                            "Question 2?",
+                            "Question 3?",
+                            "Question 4?",
+                            "Question 5?"
+                        ]
+                        """
+}
+
             
             for singleCategory in self.VALID_CATEGORIES:
                 getter_method = getattr(self.resume_analyser, f"get_{singleCategory}")
