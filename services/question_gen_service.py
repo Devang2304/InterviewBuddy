@@ -11,6 +11,11 @@ class QuestionGenerationService:
     def __init__(self):
         self.resume_analyser = ResumeAnalyser()
         self.text_generation_service = text_generation_service()
+        
+    async def get_fiveRandom_questionsFromJson(self,category:str) -> Dict[str, Any]:
+        try:
+            
+            
     
     async def get_question(self,category:str) -> Dict[str, Any]:
         try:

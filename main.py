@@ -58,6 +58,7 @@ async def upload_pdf(file: UploadFile):
 
 class SectionRequest(BaseModel):
     section: str = None
+    csSubject: str = None
     question: str = None
     answer: str = None
 @app.post("/round1/section")
@@ -88,6 +89,16 @@ async def generate_followup_question(request: SectionRequest):
     except Exception as e:
         print(f"Error in generate_followup_question: {str(e)}")  
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/round2/cs-fundamentals")
+async def round2(request: SectionRequest):
+    try:
+        question_gen_service = QuestionGenerationService()
+        questions = await question_gen_service.get_csFundamentals(request.csSubject)
+        return {"questions": questions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
     
 @app.get("/")
 async def root():
