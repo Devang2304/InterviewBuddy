@@ -3,6 +3,7 @@ from services.resume_analyser import ResumeAnalyser
 from typing import Dict,Any
 import os
 import json
+import random
 
 class QuestionGenerationService:
     
@@ -11,9 +12,37 @@ class QuestionGenerationService:
     def __init__(self):
         self.resume_analyser = ResumeAnalyser()
         self.text_generation_service = text_generation_service()
-        
-    async def get_fiveRandom_questionsFromJson(self,category:str) -> Dict[str, Any]:
+    
+    def get_random_questions(self,json_data, num_questions=5) -> Dict[str, Any]:
         try:
+            topics = json_data["topics"]
+
+            available_topics = topics.copy()
+            selected_questions = []
+
+            for _ in range(min(num_questions,len(topics))):
+                if not available_topics:
+                    break
+
+                random_topic = random.choice(available_topics)
+                available_topics.remove(random_topic)
+                random_question = random.choice(random_topic["questions"])
+                selected_questions.append(random_question)
+            
+            return selected_questions
+        except Exception as e:
+            return {"error": str(e)}
+
+    async def get_fiveRandom_questionsFromJsonCS(self,category:str) -> Dict[str, Any]:
+        try:
+            path = os.path.join("QuestionsDB/Beginner", f"{category}generatedQuestions.json")
+            with open(path, 'r') as file:
+                data = json.load(file)
+            questions = self.get_random_questions(data, num_questions=5)
+            return questions
+        except Exception as e:
+            return {"error": str(e)}
+
             
             
     

@@ -1,7 +1,7 @@
 {
     "topics": [
       {
-        "topic": "Static vs Dynamic Languages",
+        "name": "Static vs Dynamic Languages",
         "questions": [
           "What is the primary difference between static and dynamic type checking?",
           "Explain a scenario where a dynamic language might lead to runtime errors that a static language would catch earlier.",
@@ -9,7 +9,7 @@
         ]
       },
       {
-        "topic": "Memory Management & Garbage Collection",
+        "name": "Memory Management & Garbage Collection",
         "questions": [
           "How does Java handle memory allocation for objects and primitives differently?",
           "What triggers garbage collection in Java, and how does it identify unreferenced objects?",
@@ -17,7 +17,7 @@
         ]
       },
       {
-        "topic": "Java Platform Independence (JVM, JDK, JRE, JIT)",
+        "name": "Java Platform Independence (JVM, JDK, JRE, JIT)",
         "questions": [
           "Explain the role of the JVM in achieving platform independence.",
           "What is the difference between JDK and JRE?",
@@ -25,7 +25,7 @@
         ]
       },
       {
-        "topic": "Classes and Objects",
+        "name": "Classes and Objects",
         "questions": [
           "What is the difference between a class and an object in Java?",
           "How are objects stored in memory, and what is a reference variable?",
@@ -33,7 +33,7 @@
         ]
       },
       {
-        "topic": "Constructors and Constructor Overloading/Chaining",
+        "name": "Constructors and Constructor Overloading/Chaining",
         "questions": [
           "What is constructor overloading, and how does it differ from method overloading?",
           "How can you call one constructor from another within the same class?",
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "topic": "Final Keyword",
+        "name": "Final Keyword",
         "questions": [
           "What does the `final` keyword imply when applied to a variable, method, or class?",
           "Can a `final` object’s internal state be modified? Explain with an example.",
@@ -49,7 +49,7 @@
         ]
       },
       {
-        "topic": "Static vs Non-static Methods and Variables",
+        "name": "Static vs Non-static Methods and Variables",
         "questions": [
           "Why can’t a static method access non-static instance variables directly?",
           "How does the `static` block work, and when is it executed?",
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "topic": "Polymorphism (Overloading/Overriding)",
+        "name": "Polymorphism (Overloading/Overriding)",
         "questions": [
           "What is dynamic method dispatch, and how does it relate to runtime polymorphism?",
           "Can static methods be overridden? Justify your answer.",
@@ -65,7 +65,7 @@
         ]
       },
       {
-        "topic": "Abstract Classes and Interfaces",
+        "name": "Abstract Classes and Interfaces",
         "questions": [
           "Why can’t Java support multiple inheritance through classes?",
           "What is the purpose of an abstract class, and how does it differ from an interface?",
@@ -73,7 +73,7 @@
         ]
       },
       {
-        "topic": "Annotations",
+        "name": "Annotations",
         "questions": [
           "What is the purpose of the `@Override` annotation?",
           "How can custom annotations be used to enforce code constraints?",
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "topic": "Lambda Expressions",
+        "name": "Lambda Expressions",
         "questions": [
           "How do lambda expressions simplify the implementation of functional interfaces?",
           "What is a `Consumer` functional interface, and how is it used with collections?",
@@ -89,7 +89,7 @@
         ]
       },
       {
-        "topic": "Exception Handling",
+        "name": "Exception Handling",
         "questions": [
           "What is the difference between `throw` and `throws` in Java?",
           "How does a `try-with-resources` statement improve exception handling?",
@@ -97,7 +97,7 @@
         ]
       },
       {
-        "topic": "Generics and Wildcards",
+        "name": "Generics and Wildcards",
         "questions": [
           "What is type erasure, and how does it affect generics at runtime?",
           "Explain the difference between `<? extends T>` and `<? super T>` wildcards.",
@@ -105,7 +105,7 @@
         ]
       },
       {
-        "topic": "Object Cloning (Shallow vs Deep)",
+        "name": "Object Cloning (Shallow vs Deep)",
         "questions": [
           "What is the difference between shallow copy and deep copy?",
           "How does the `Cloneable` interface enable object cloning?",
@@ -113,7 +113,7 @@
         ]
       },
       {
-        "topic": "Comparable and Comparator",
+        "name": "Comparable and Comparator",
         "questions": [
           "When would you use `Comparable` vs `Comparator` for sorting objects?",
           "How does the `compareTo` method define natural ordering for a class?",

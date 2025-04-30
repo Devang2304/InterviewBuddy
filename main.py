@@ -94,7 +94,7 @@ async def generate_followup_question(request: SectionRequest):
 async def round2(request: SectionRequest):
     try:
         question_gen_service = QuestionGenerationService()
-        questions = await question_gen_service.get_csFundamentals(request.csSubject)
+        questions = await question_gen_service.get_fiveRandom_questionsFromJsonCS(request.csSubject)
         return {"questions": questions}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

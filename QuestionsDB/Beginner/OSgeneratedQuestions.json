@@ -1,8 +1,7 @@
-
 {
   "topics": [
     {
-      "topic": "Operating System Fundamentals",
+      "name": "Operating System Fundamentals",
       "questions": [
         "What is the primary function of an operating system?",
         "Explain the difference between system software and application software. Give examples of each.",
@@ -12,7 +11,7 @@
       ]
     },
     {
-      "topic": "Types of Operating Systems",
+      "name": "Types of Operating Systems",
       "questions": [
         "Differentiate between batch-processing, multiprogramming, multitasking, and multiprocessing operating systems.",
         "Explain the concept of a distributed operating system.",
@@ -22,7 +21,7 @@
       ]
     },
     {
-      "topic": "Multitasking vs. Multithreading",
+      "name": "Multitasking vs. Multithreading",
       "questions": [
         "Explain the difference between multitasking and multithreading.",
         "What is a process? What is a thread? How are they related?",
@@ -32,7 +31,7 @@
       ]
     },
     {
-      "topic": "Operating System Components (Kernel and User Space)",
+      "name": "Operating System Components (Kernel and User Space)",
       "questions": [
         "Describe the role and responsibilities of the kernel in an operating system.",
         "What is user space? How does it differ from kernel space?",
@@ -42,7 +41,7 @@
       ]
     },
     {
-      "topic": "System Calls",
+      "name": "System Calls",
       "questions": [
         "What is a system call? Why are they necessary?",
         "Explain the transition between user mode and kernel mode.",
@@ -52,7 +51,7 @@
       ]
     },
     {
-      "topic": "Boot Process",
+      "name": "Boot Process",
       "questions": [
         "Describe the steps involved in the boot process of a computer.",
         "What is BIOS/UEFI? What is its role in the boot process?",
@@ -62,7 +61,7 @@
       ]
     },
     {
-      "topic": "32-bit vs. 64-bit Operating Systems",
+      "name": "32-bit vs. 64-bit Operating Systems",
       "questions": [
         "What is the fundamental difference between a 32-bit and a 64-bit operating system?",
         "Explain the addressable memory limitations of 32-bit and 64-bit OS.",
@@ -72,7 +71,7 @@
       ]
     },
     {
-      "topic": "Memory Hierarchy",
+      "name": "Memory Hierarchy",
       "questions": [
         "Describe the different levels of memory in a computer system (registers, cache, main memory, secondary memory).",
         "Compare the characteristics of each level of memory (cost, access speed, storage size, volatility).",
@@ -82,7 +81,7 @@
       ]
     },
     {
-      "topic": "Process Management",
+      "name": "Process Management",
       "questions": [
         "What is the difference between a program and a process?",
         "Describe the steps involved in creating a process.",
@@ -92,7 +91,7 @@
       ]
     },
     {
-      "topic": "Process Scheduling",
+      "name": "Process Scheduling",
       "questions": [
         "Explain the concept of process scheduling and its importance in a multi-programming OS.",
         "Differentiate between preemptive and non-preemptive scheduling.",
@@ -102,7 +101,7 @@
       ]
     },
     {
-      "topic": "Process Queues and Schedulers",
+      "name": "Process Queues and Schedulers",
       "questions": [
         "Describe the different process queues (job queue, ready queue, waiting queue).",
         "What is the role of the Long-Term Scheduler (LTS), Short-Term Scheduler (STS), and Medium-Term Scheduler (MTS)?",
@@ -112,7 +111,7 @@
       ]
     },
     {
-      "topic": "Multi-Level Queue Scheduling (MLQ) and Multi-Level Feedback Queue Scheduling (MLFQ)",
+      "name": "Multi-Level Queue Scheduling (MLQ) and Multi-Level Feedback Queue Scheduling (MLFQ)",
       "questions": [
         "Describe the multi-level queue scheduling (MLQ) algorithm.",
         "What are the different types of processes used by the MLQ algorithm?",
@@ -122,7 +121,7 @@
       ]
     },
     {
-      "topic": "Concurrency and Thread Synchronization",
+      "name": "Concurrency and Thread Synchronization",
       "questions": [
         "What is concurrency? How does it relate to parallelism?",
         "Explain the benefits of multithreading.",
@@ -132,7 +131,7 @@
       ]
     },
     {
-      "topic": "Critical Section Problem and Solutions",
+      "name": "Critical Section Problem and Solutions",
       "questions": [
         "What is a critical section? Why is it a problem in concurrent programming?",
         "What is a race condition? How can it occur?",
@@ -142,7 +141,7 @@
       ]
     },
     {
-      "topic": "Conditional Variables and Semaphores",
+      "name": "Conditional Variables and Semaphores",
       "questions": [
         "What is a conditional variable? How does it work with locks?",
         "Why use conditional variables over busy waiting?",
@@ -152,7 +151,7 @@
       ]
     },
     {
-      "topic": "The Dining Philosophers Problem",
+      "name": "The Dining Philosophers Problem",
       "questions": [
         "Describe the Dining Philosophers problem.",
         "How can semaphores be used to model the Dining Philosophers problem?",
@@ -162,7 +161,7 @@
       ]
     },
     {
-      "topic": "Deadlock",
+      "name": "Deadlock",
       "questions": [
         "What is a deadlock? How does it occur?",
         "What are the four necessary conditions for deadlock to occur?",
@@ -172,7 +171,7 @@
       ]
     },
         {
-      "topic": "Memory Management Techniques",
+      "name": "Memory Management Techniques",
       "questions": [
         "Explain the difference between logical and physical address spaces.",
         "What is the role of the Memory Management Unit (MMU)?",
@@ -182,7 +181,7 @@
       ]
     },
     {
-      "topic": "Free Space Management",
+      "name": "Free Space Management",
       "questions": [
         "What is external fragmentation? How does it arise?",
         "What is compaction or defragmentation? What are its costs and benefits?",
@@ -192,7 +191,7 @@
       ]
     },
     {
-      "topic": "Paging",
+      "name": "Paging",
       "questions": [
         "What is paging? How does it solve the problem of external fragmentation?",
         "Explain the concepts of pages and frames.",
@@ -202,7 +201,7 @@
       ]
     },
     {
-      "topic": "Segmentation",
+      "name": "Segmentation",
       "questions": [
         "What is segmentation? How does it support the user view of memory?",
         "Explain the concepts of segments, segment numbers, and offsets.",
@@ -212,7 +211,7 @@
       ]
     },
     {
-      "topic": "Virtual Memory",
+      "name": "Virtual Memory",
       "questions": [
         "What is virtual memory? How does it allow programs to be larger than physical memory?",
         "Explain the concept of demand paging.",
@@ -222,7 +221,7 @@
       ]
     },
     {
-      "topic": "Page Replacement Algorithms",
+      "name": "Page Replacement Algorithms",
       "questions": [
         "Why are page replacement algorithms necessary?",
         "Describe the following page replacement algorithms: FIFO, Optimal, LRU, LFU, MFU.",
@@ -232,7 +231,7 @@
       ]
     },
     {
-      "topic": "Thrashing",
+      "name": "Thrashing",
       "questions": [
         "What is thrashing? What causes it?",
         "How does thrashing affect system performance?",

@@ -1,9 +1,9 @@
 
 {
-  "key_topics": [
+  "topics": [
     {
-      "topic": "Data vs. Information",
-      "interview_questions": [
+      "name": "Data vs. Information",
+      "questions": [
         "Explain the fundamental difference between data and information. Provide examples to illustrate your understanding.",
         "Why is it important to differentiate between data and information in the context of database management?",
         "Describe a scenario where converting raw data into meaningful information led to a critical business decision. What steps were involved in this transformation?",
@@ -12,8 +12,8 @@
       ]
     },
     {
-      "topic": "Database and DBMS",
-      "interview_questions": [
+      "name": "Database and DBMS",
+      "questions": [
         "What is a database, and what is the role of a Database Management System (DBMS)?",
         "Explain the primary goal of a DBMS. How does it achieve this goal?",
         "Describe the different operations that a DBMS typically performs on data.",
@@ -22,8 +22,8 @@
       ]
     },
     {
-      "topic": "DBMS Architecture (Three-Schema Architecture)",
-      "interview_questions": [
+      "name": "DBMS Architecture (Three-Schema Architecture)",
+      "questions": [
         "Explain the three-schema architecture (physical, logical, and view levels) and their purpose in a DBMS.",
         "How does the three-schema architecture contribute to data abstraction and simplify user interaction with the database system?",
         "What is physical data independence, and why is it important? How does the three-schema architecture support it?",
@@ -32,8 +32,8 @@
       ]
     },
     {
-      "topic": "Data Models",
-      "interview_questions": [
+      "name": "Data Models",
+      "questions": [
         "What is a data model, and why is it important in database design?",
         "Describe different types of data models, such as the ER model, relational model, object-oriented model, and object-relational data model. What are the strengths and weaknesses of each?",
         "Explain the key differences between the ER model and the Relational Model.",
@@ -42,8 +42,8 @@
       ]
     },
     {
-      "topic": "Database Languages (DDL and DML)",
-      "interview_questions": [
+      "name": "Database Languages (DDL and DML)",
+      "questions": [
         "What are Data Definition Language (DDL) and Data Manipulation Language (DML)? Provide examples of commands for each.",
         "Explain the purpose of consistency constraints in DDL. How are these constraints checked and enforced?",
         "Describe the four basic data manipulation operations in DML (retrieval, insertion, deletion, and updating).",
@@ -52,8 +52,8 @@
       ]
     },
     {
-      "topic": "Database Administrator (DBA) Responsibilities",
-      "interview_questions": [
+      "name": "Database Administrator (DBA) Responsibilities",
+      "questions": [
         "What are the key functions and responsibilities of a Database Administrator (DBA)?",
         "Explain the importance of schema definition, storage structure management, and access methods in the context of DBA duties.",
         "Describe the DBA's role in authorization control and security management.",
@@ -62,8 +62,8 @@
       ]
     },
     {
-      "topic": "DBMS Application Architectures (T1, T2, T3)",
-      "interview_questions": [
+      "name": "DBMS Application Architectures (T1, T2, T3)",
+      "questions": [
         "Describe the T1, T2, and T3 DBMS application architectures. What are the key differences between them?",
         "Explain the role of client machines, server machines, and application servers in these architectures.",
         "What are the advantages of the T3 architecture, especially for WWW applications?",
@@ -72,8 +72,8 @@
       ]
     },
     {
-      "topic": "Entity-Relationship (ER) Model",
-      "interview_questions": [
+      "name": "Entity-Relationship (ER) Model",
+      "questions": [
         "What is the Entity-Relationship (ER) model, and why is it used in database design?",
         "Explain the concepts of entities, attributes, and relationships in the ER model. Provide examples.",
         "Differentiate between strong and weak entities. How are they represented in an ER diagram?",
@@ -82,8 +82,8 @@
       ]
     },
     {
-      "topic": "Extended ER Features (Specialization, Generalization, Aggregation)",
-      "interview_questions": [
+      "name": "Extended ER Features (Specialization, Generalization, Aggregation)",
+      "questions": [
         "Explain the concepts of specialization and generalization in the context of ER modeling. Provide examples.",
         "What is attribute inheritance, and how does it apply to specialization and generalization?",
         "Explain the concept of aggregation in ER modeling. Why and when is it used?",
@@ -92,8 +92,8 @@
       ]
     },
     {
-      "topic": "Relational Model",
-      "interview_questions": [
+      "name": "Relational Model",
+      "questions": [
         "What is the relational model, and how does it organize data?",
         "Explain the concepts of relations (tables), tuples (rows), and attributes (columns) in the relational model.",
         "What is a relation schema, and what information does it contain?",
@@ -102,8 +102,8 @@
       ]
     },
     {
-      "topic": "Relational Model Keys (Super Key, Candidate Key, Primary Key, Foreign Key)",
-      "interview_questions": [
+      "name": "Relational Model Keys (Super Key, Candidate Key, Primary Key, Foreign Key)",
+      "questions": [
         "Explain the concepts of super key, candidate key, primary key, alternate key, and foreign key in the relational model. Provide examples.",
         "What are composite keys, compound keys, and surrogate keys? How are they used?",
         "Why is it important to choose the 'right' primary key?",
@@ -112,8 +112,8 @@
       ]
     },
     {
-      "topic": "Integrity Constraints (Domain, Entity, Referential, Key)",
-      "interview_questions": [
+      "name": "Integrity Constraints (Domain, Entity, Referential, Key)",
+      "questions": [
         "Explain the different types of integrity constraints (domain, entity, referential, key) in the relational model. Provide examples of each.",
         "What are CRUD operations, and how do integrity constraints ensure data consistency during these operations?",
         "How do referential constraints maintain consistency between tuples in two relations?",
@@ -122,8 +122,8 @@
       ]
     },
     {
-      "topic": "Transforming ER Model to Relational Model",
-      "interview_questions": [
+      "name": "Transforming ER Model to Relational Model",
+      "questions": [
         "Describe the process of converting a database representation from an ER diagram to a relational database design.",
         "How are strong and weak entities transformed into tables in the relational model?",
         "How are single-valued, composite, and multi-valued attributes handled during the transformation?",
@@ -132,8 +132,8 @@
       ]
     },
     {
-      "topic": "SQL (Data Types, DDL, DML, DQL, DCL, TCL)",
-      "interview_questions": [
+      "name": "SQL (Data Types, DDL, DML, DQL, DCL, TCL)",
+      "questions": [
         "What is SQL, and how is it used to interact with databases?",
         "Describe the different categories of SQL commands (DDL, DML, DQL, DCL, TCL) and their purpose. Provide examples.",
         "What are the common SQL data types, and how are they used?",
@@ -142,8 +142,8 @@
       ]
     },
     {
-      "topic": "SQL (SELECT, WHERE, GROUP BY, JOIN, Subqueries, Views)",
-      "interview_questions": [
+      "name": "SQL (SELECT, WHERE, GROUP BY, JOIN, Subqueries, Views)",
+      "questions": [
         "Explain the SELECT statement and its various clauses (WHERE, ORDER BY, GROUP BY, HAVING, DISTINCT). Provide examples.",
         "How are wildcard characters (%) and (_) used in pattern searching with the LIKE operator?",
         "What is the purpose of the GROUP BY clause, and how is it used with aggregation functions?",
@@ -153,8 +153,8 @@
       ]
     },
     {
-      "topic": "SQL (Constraints, ALTER Operations, DELETE Cascade, REPLACE)",
-      "interview_questions": [
+      "name": "SQL (Constraints, ALTER Operations, DELETE Cascade, REPLACE)",
+      "questions": [
         "Explain the different types of constraints (Primary Key, Foreign Key, Unique, Check, Default) and how they are defined in SQL.",
         "Describe the ALTER TABLE statement and its various operations (ADD, MODIFY, CHANGE COLUMN, DROP COLUMN, RENAME).",
         "What are ON UPDATE CASCADE and ON DELETE CASCADE, and how are they used to maintain referential integrity?",
@@ -163,8 +163,8 @@
       ]
     },
     {
-      "topic": "Normalization (1NF, 2NF, 3NF, BCNF)",
-      "interview_questions": [
+      "name": "Normalization (1NF, 2NF, 3NF, BCNF)",
+      "questions": [
         "What is normalization, and why is it important in database design?",
         "Explain the concepts of functional dependency and Armstrong's axioms.",
         "Describe the different normal forms (1NF, 2NF, 3NF, BCNF) and the requirements for each.",
@@ -173,8 +173,8 @@
       ]
     },
     {
-      "topic": "Transactions (ACID Properties, Transaction States)",
-      "interview_questions": [
+      "name": "Transactions (ACID Properties, Transaction States)",
+      "questions": [
         "What is a transaction, and why is it used in database management?",
         "Explain the ACID properties (Atomicity, Consistency, Isolation, Durability) and their importance.",
         "Describe the different transaction states (active, partially committed, committed, failed, aborted, terminated).",
@@ -183,8 +183,8 @@
       ]
     },
     {
-      "topic": "Implementing Atomicity and Durability (Shadow-Copy Scheme, Log-Based Recovery)",
-      "interview_questions": [
+      "name": "Implementing Atomicity and Durability (Shadow-Copy Scheme, Log-Based Recovery)",
+      "questions": [
         "Explain the shadow-copy scheme for implementing atomicity and durability.",
         "Describe the log-based recovery methods (deferred database modifications and immediate database modifications).",
         "What is stable storage, and why is it important for log-based recovery?",
@@ -193,8 +193,8 @@
       ]
     },
     {
-      "topic": "Indexing",
-      "interview_questions": [
+      "name": "Indexing",
+      "questions": [
         "What is indexing, and how does it improve database performance?",
         "Explain the concepts of search key and data reference in the context of indexing.",
         "Describe the different types of indexing methods (primary index, secondary index, multi-level index).",
@@ -203,8 +203,8 @@
       ]
     },
     {
-      "topic": "NoSQL Databases",
-      "interview_questions": [
+      "name": "NoSQL Databases",
+      "questions": [
         "What are NoSQL databases, and how do they differ from relational databases?",
         "Describe the key advantages of NoSQL databases (flexible schema, horizontal scaling, high availability).",
         "What are the different types of NoSQL data models (key-value, column-oriented, document-based, graph-based)? Provide examples of each.",
@@ -213,8 +213,8 @@
       ]
     },
     {
-      "topic": "Types of Databases (Relational, Object-Oriented, NoSQL, Hierarchical, Network)",
-      "interview_questions": [
+      "name": "Types of Databases (Relational, Object-Oriented, NoSQL, Hierarchical, Network)",
+      "questions": [
         "Describe the different types of databases (relational, object-oriented, NoSQL, hierarchical, network).",
         "What are the strengths and weaknesses of each type of database?",
         "In what scenarios would you choose one type of database over another?",
@@ -223,8 +223,8 @@
       ]
     },
     {
-      "topic": "Clustering",
-      "interview_questions": [
+      "name": "Clustering",
+      "questions": [
         "What is database clustering, and why is it used?",
         "What are the advantages of database clustering (data redundancy, load balancing, high availability)?",
         "How does clustering work to improve performance and reliability?",
@@ -233,8 +233,8 @@
       ]
     },
     {
-      "topic": "Partitioning and Sharding",
-      "interview_questions": [
+      "name": "Partitioning and Sharding",
+      "questions": [
         "What is partitioning, and how does it improve database performance and manageability?",
         "Explain the difference between vertical and horizontal partitioning.",
         "What is sharding, and how does it implement horizontal partitioning?",
@@ -243,8 +243,8 @@
       ]
     },
     {
-      "topic": "Database Scaling Patterns",
-      "interview_questions": [
+      "name": "Database Scaling Patterns",
+      "questions": [
         "Describe the different database scaling patterns discussed in the case study (query optimization, vertical scaling, CQRS, multi-primary replication, partitioning by functionality, horizontal scaling, data center wise partition).",
         "In what order would you typically apply these scaling patterns as an application grows?",
         "What are the trade-offs between vertical and horizontal scaling?",
@@ -253,8 +253,8 @@
       ]
     },
     {
-      "topic": "CAP Theorem (Consistency, Availability, Partition Tolerance)",
-      "interview_questions": [
+      "name": "CAP Theorem (Consistency, Availability, Partition Tolerance)",
+      "questions": [
         "Explain the CAP theorem and its implications for distributed system design.",
         "What are consistency, availability, and partition tolerance? Provide examples of each.",
         "Why can't a distributed system simultaneously guarantee all three properties (CAP)?",
@@ -263,8 +263,8 @@
       ]
     },
     {
-      "topic": "Master-Slave Database Concept",
-      "interview_questions": [
+      "name": "Master-Slave Database Concept",
+      "questions": [
         "Explain the master-slave database concept and its purpose.",
         "How does this architecture improve read performance and site reliability?",
         "What is database replication, and how does it work in the master-slave architecture?",
