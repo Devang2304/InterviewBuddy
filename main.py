@@ -98,7 +98,15 @@ async def round2(request: SectionRequest):
         return {"questions": questions}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
+@app.post("/round4/HR")
+async def round4():
+    try:
+        question_gen_service = QuestionGenerationService()
+        questions = await question_gen_service.get_random_questionHR("HR")
+        return {"questions": questions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))    
     
 @app.get("/")
 async def root():

@@ -43,7 +43,32 @@ class QuestionGenerationService:
         except Exception as e:
             return {"error": str(e)}
 
-            
+    def selectRandom(self, json_data) -> Dict[str, Any]:
+        num_questions = 5
+        try:
+            topics = json_data["HRQuestions"]
+            available_questions = topics.copy()
+            selected_questions = []
+            for _ in range(min(num_questions, len(topics))):
+                if not available_questions:
+                    break
+                random_question = random.choice(available_questions)
+                available_questions.remove(random_question)
+                selected_questions.append(random_question)
+                print("selected_questions",selected_questions)
+            return selected_questions
+        except Exception as e:
+            return {"error": str(e)}
+
+    async def get_random_questionHR(self, category:str) -> Dict[str, Any]:
+        try:
+            path = os.path.join("QuestionsDB/HR", f"{category}generatedQuestions.json")
+            with open(path, 'r') as file:
+                data = json.load(file)
+            questions = self.selectRandom(data)
+            return questions
+        except Exception as e:
+            return {"error": str(e)}
             
     
     async def get_question(self,category:str) -> Dict[str, Any]:
