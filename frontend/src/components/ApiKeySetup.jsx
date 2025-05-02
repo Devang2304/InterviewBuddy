@@ -9,12 +9,12 @@ function ApiKeySetup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/config/gemini-key', {
+      const response = await fetch('http://127.0.0.1:8000/set-api-key', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ apiKey }),
+        body: JSON.stringify({ api_key:apiKey }),
       });
 
       if (response.ok) {

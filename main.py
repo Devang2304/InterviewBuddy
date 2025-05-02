@@ -25,6 +25,7 @@ from fastapi import FastAPI, UploadFile, HTTPException, File, Body
 from fastapi.middleware.cors import CORSMiddleware
 from services.question_gen_service import QuestionGenerationService
 from services.followupQGenService import FollowupQGenService
+from services.generalService import generalService
 from pydantic import BaseModel
 
 
@@ -48,7 +49,10 @@ async def upload_pdf(file: UploadFile):
         with open(filePath, "wb") as f:
             f.write(content)
         
-        return {"filename":file.filename, "message":"File uploaded successfully"}
+        return {
+            "status_code":200,
+            "filename":file.filename,
+            "message":"File uploaded successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) 
     finally:
@@ -61,6 +65,26 @@ class SectionRequest(BaseModel):
     csSubject: str = None
     question: str = None
     answer: str = None
+    api_key: str = None
+
+@app.post("/set-api-key")
+async def set_api_key(request: SectionRequest):
+    try:
+        general_service = generalService()
+        api_key = request.api_key
+        if api_key is None:
+            raise HTTPException(status_code=400, detail="API key is required")
+        if api_key == "":
+            raise HTTPException(status_code=400, detail="API key cannot be empty")
+        set_api_key = await general_service.set_api_key(api_key)
+
+        if set_api_key["status_code"] == 200:
+            return {"message":"API key set successfully"}
+        else:
+            return {"message":"cannot set API key at the moment, please try again later"}
+    except Exception as e:
+        print(f"Error in set_api_key: {str(e)}")  
+        raise HTTPException(status_code=500, detail=str(e))
 @app.post("/round1/section")
 async def round1(request: SectionRequest):
     try:
