@@ -26,7 +26,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from services.question_gen_service import QuestionGenerationService
 from services.followupQGenService import FollowupQGenService
 from services.generalService import generalService
+from services.voiceTranscribeService import voiceTranscribeService
 from pydantic import BaseModel
+import os 
+import tempfile
 
 
 app = FastAPI()
@@ -38,6 +41,32 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.post("/transcribe-chunk")
+async def transcribe_audio(file: UploadFile):
+    try:
+        print("file", file)
+        if file.content_type !="audio/wave" and file.content_type !="audio/mpeg":
+            raise HTTPException(status_code=400, detail="Only WAV and MP3 files are allowed")
+        content = await file.read()
+        if file.content_type == "audio/mpeg":
+            fileSuffix = ".mp3"
+        else:
+            fileSuffix = ".wav"
+        with tempfile.NamedTemporaryFile(delete=False, suffix=fileSuffix) as temp_file:
+            temp_path = temp_file.name
+            temp_file.write(content)
+        
+        try:
+            translate_service = voiceTranscribeService()
+            transcription = translate_service.transcribe(temp_path)
+
+            return {"transcription": transcription}
+        finally:
+            os.unlink(temp_path)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/upload-resume")
 async def upload_pdf(file: UploadFile):
