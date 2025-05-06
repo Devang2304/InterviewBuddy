@@ -30,6 +30,7 @@ from services.voiceTranscribeService import voiceTranscribeService
 from pydantic import BaseModel
 import os 
 import tempfile
+import random
 
 
 app = FastAPI()
@@ -43,19 +44,11 @@ app.add_middleware(
 )
 
 @app.post("/transcribe-chunk")
-async def transcribe_audio(file: UploadFile):
+async def transcribe_audio(audio_data: bytes = Body(...)):
     try:
-        print("file", file)
-        if file.content_type !="audio/wav" and file.content_type !="audio/mpeg":
-            raise HTTPException(status_code=400, detail="Only WAV and MP3 files are allowed")
-        content = await file.read()
-        if file.content_type == "audio/mpeg":
-            fileSuffix = ".mp3"
-        else:
-            fileSuffix = ".wav"
-        with tempfile.NamedTemporaryFile(delete=False, suffix=fileSuffix) as temp_file:
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.webm') as temp_file:
             temp_path = temp_file.name
-            temp_file.write(content)
+            temp_file.write(audio_data)
         
         try:
             translate_service = voiceTranscribeService()
@@ -63,6 +56,15 @@ async def transcribe_audio(file: UploadFile):
 
             return {"transcription": transcription}
         finally:
+            # added for debugging purposes 
+            if not os.path.exists("./audio"):
+                os.makedirs("./audio")
+                
+            fileName = "audio_" + str(random.randint(1, 100000)) + ".webm"
+            audio_path = os.path.join("./audio",fileName)
+            with open(audio_path, "wb") as audio_file:
+                audio_file.write(audio_data)
+            
             os.unlink(temp_path)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
