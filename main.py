@@ -46,7 +46,7 @@ app.add_middleware(
 async def transcribe_audio(file: UploadFile):
     try:
         print("file", file)
-        if file.content_type !="audio/wave" and file.content_type !="audio/mpeg":
+        if file.content_type !="audio/wav" and file.content_type !="audio/mpeg":
             raise HTTPException(status_code=400, detail="Only WAV and MP3 files are allowed")
         content = await file.read()
         if file.content_type == "audio/mpeg":

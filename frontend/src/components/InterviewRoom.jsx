@@ -5,15 +5,19 @@ import { MicrophoneIcon, VideoCameraIcon, UserIcon } from '@heroicons/react/24/o
 
 function InterviewRoom() {
   const [currentQuestion, setCurrentQuestion] = useState('');
-  const [isListening, setIsListening] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [round, setRound] = useState('resume');
+  const [isProcessing, setIsProcessing] = useState(false);
   const webcamRef = useRef(null);
-  const recognitionRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
+  const wsRef = useRef(null);
 
   useEffect(() => {
     // Initialize WebSocket connection
     const ws = new WebSocket('ws://localhost:5000');
+    wsRef.current = ws;
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
@@ -24,42 +28,82 @@ function InterviewRoom() {
       }
     };
 
-    // Initialize speech recognition
-    if ('webkitSpeechRecognition' in window) {
-      const recognition = new window.webkitSpeechRecognition();
-      recognition.continuous = true;
-      recognition.interimResults = true;
-
-      recognition.onresult = (event) => {
-        const current = event.resultIndex;
-        const transcript = event.results[current][0].transcript;
-        setTranscript(transcript);
-      };
-
-      recognition.onend = () => {
-        if (isListening) {
-          recognition.start();
-        }
-      };
-
-      recognitionRef.current = recognition;
-    }
-
     return () => {
       ws.close();
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
       }
     };
   }, []);
 
-  const toggleListening = () => {
-    if (isListening) {
-      recognitionRef.current?.stop();
-    } else {
-      recognitionRef.current?.start();
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = async (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+          
+          // Create a blob from the chunks
+          const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
+          
+          // Send the audio chunk to the backend
+          await sendAudioChunk(audioBlob);
+          
+          // Clear the chunks after sending
+          audioChunksRef.current = [];
+        }
+      };
+
+      // Start recording and send chunks every 10 seconds
+      mediaRecorder.start(10000);
+      setIsRecording(true);
+    } catch (error) {
+      console.error('Error starting recording:', error);
     }
-    setIsListening(!isListening);
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      mediaRecorderRef.current.stop();
+      mediaRecorderRef.current.stream.getTracks().forEach(track => track.stop());
+      setIsRecording(false);
+    }
+  };
+
+  const sendAudioChunk = async (audioBlob) => {
+    setIsProcessing(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', audioBlob);
+
+      const response = await fetch('http://127.0.0.1:8000/transcribe-chunk', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setTranscript(prevTranscript => prevTranscript + ' ' + data.transcription);
+      } else {
+        console.error('Failed to transcribe audio chunk');
+      }
+    } catch (error) {
+      console.error('Error sending audio chunk:', error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const toggleRecording = () => {
+    if (isRecording) {
+      stopRecording();
+    } else {
+      startRecording();
+    }
   };
 
   const videoConstraints = {
@@ -68,6 +112,7 @@ function InterviewRoom() {
     facingMode: 'user',
   };
 
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -75,6 +120,7 @@ function InterviewRoom() {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 p-6"
     >
+    {  console.log("transcript", transcript)}
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -187,19 +233,24 @@ function InterviewRoom() {
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">Your Answer</h3>
                   <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 min-h-[200px]">
                     <p className="text-gray-700">{transcript || 'Your answer will appear here...'}</p>
+                    {isProcessing && (
+                      <div className="mt-2 text-sm text-gray-500">
+                        Processing audio...
+                      </div>
+                    )}
                   </div>
                 </motion.div>
 
                 <motion.button
-                  onClick={toggleListening}
+                  onClick={toggleRecording}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className={`w-full button-primary flex items-center justify-center space-x-2 ${
-                    isListening ? 'bg-red-600 hover:bg-red-700' : ''
+                    isRecording ? 'bg-red-600 hover:bg-red-700' : ''
                   }`}
                 >
                   <MicrophoneIcon className="w-5 h-5" />
-                  <span>{isListening ? 'Stop Recording' : 'Start Recording'}</span>
+                  <span>{isRecording ? 'Stop Recording' : 'Start Recording'}</span>
                 </motion.button>
               </div>
             </div>
